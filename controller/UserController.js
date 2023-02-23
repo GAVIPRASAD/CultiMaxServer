@@ -9,6 +9,7 @@ const crypto = require("crypto")
 //Register User
 exports.createUser = catchAsyncErrors(async(req,res,next) =>{
     const {name,email,password} = req.body;
+    // console.log(req.body)
 
     const user = await User.create({
         name,email,password,
@@ -36,7 +37,7 @@ exports.createUser = catchAsyncErrors(async(req,res,next) =>{
     if(!isPasswordMatched){
         return next(new ErrorHandler("Invalid Password",401))
     }
-
+    // console.log("Loogggg")   
    sendToken(user,201,res);
  })
 
@@ -66,13 +67,14 @@ exports.createUser = catchAsyncErrors(async(req,res,next) =>{
         validateBeforeSave:false
     })
 
-    const resetPasswordUrl = `${req.protocol}://${req.get("host")}/password/reset/${resetToken}`
+    // const resetPasswordUrl = `${req.protocol}://${req.get("host")}/password/reset/${resetToken}`
+    const resetPasswordUrl = `${req.protocol}://localhost:3000/password/reset/${resetToken}`
     const message = `Your Password reset token is:\n\n${resetPasswordUrl}`;
 
     try {
         await sendMail({
             email:user.email,
-            subject:`Farm-in Password Recovery`,
+            subject:`CultiMax Password Recovery`,
             message
         })
         res.status(200).json({
@@ -152,6 +154,7 @@ exports.createUser = catchAsyncErrors(async(req,res,next) =>{
         email:req.body.email
     }
     //cloudinary part 
+    // console.log(newUserData);
     const user = await User.findByIdAndUpdate(req.user.id,newUserData,{
         new:true,
         runValidators:true,
