@@ -29,11 +29,11 @@ const orderSchema = new mongoose.Schema({
   },
   orderItems: [
     {
-      productName: {
+      name: {
         type: String,
         required: true,
       },
-      productPrice: {
+      price: {
         type: Number,
         required: true,
       },
