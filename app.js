@@ -8,7 +8,7 @@ const fileUpload = require("express-fileupload");
 const bodyParser = require("body-parser");
 const cloudinary = require("cloudinary");
 const ErrorHandler = require("./middleware/error");
-// const path = require("path");
+const path = require("path");
 
 //Handling uncaught exception
 process.on("uncaughtException", (err) => {
@@ -45,10 +45,10 @@ app.use("/api/v1", user);
 app.use("/api/v1", order);
 
 
-// app.use(express.static(path.join(__dirname,"./build")));
-// app.get("*",(req,res) =>{
-//   res.sendFile(path.resolve(__dirname,"./build/index.html"));
-// })
+app.use(express.static(path.join(__dirname,"./build")));
+app.get("*",(req,res) =>{
+  res.sendFile(path.resolve(__dirname,"./build/index.html"));
+})
 
 //error
 app.use(ErrorHandler);
