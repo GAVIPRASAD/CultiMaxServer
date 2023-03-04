@@ -68,7 +68,7 @@ exports.createUser = catchAsyncErrors(async(req,res,next) =>{
     })
 
     // const resetPasswordUrl = `${req.protocol}://${req.get("host")}/password/reset/${resetToken}`
-    const resetPasswordUrl = `${req.protocol}://localhost:3000/password/reset/${resetToken}`
+    const resetPasswordUrl = `https://cultimax.onrender.com/password/reset/${resetToken}`
     const message = `Your Password reset token is:\n\n${resetPasswordUrl}`;
 
     try {
