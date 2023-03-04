@@ -8,6 +8,7 @@ const fileUpload = require("express-fileupload");
 const bodyParser = require("body-parser");
 const cloudinary = require("cloudinary");
 const ErrorHandler = require("./middleware/error");
+// const path = require("path");
 
 //Handling uncaught exception
 process.on("uncaughtException", (err) => {
@@ -26,6 +27,7 @@ cloudinary.config({
 })
 
 
+
 // cors is used for proxy request without this it will throw error proxy cant be done
 app.use(cors());
 app.use(express.json());
@@ -42,6 +44,12 @@ app.use("/api/v1", products);
 app.use("/api/v1", user);
 app.use("/api/v1", order);
 
+
+// app.use(express.static(path.join(__dirname,"./build")));
+// app.get("*",(req,res) =>{
+//   res.sendFile(path.resolve(__dirname,"./build/index.html"));
+// })
+
 //error
 app.use(ErrorHandler);
 
@@ -49,11 +57,11 @@ app.use(ErrorHandler);
 connectDatabase();
 
 // "/" Route
-app.get("/", (req, res) => {
-  res.send("Hello Gavi Prasad Siddu");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello Gavi Prasad Siddu");
+// });
 
-const server = app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT || 8080, () => {
   console.log(
     `Server is listening on the port http://localhost:${process.env.PORT}`
   );

@@ -8,10 +8,10 @@ WORKDIR /app
 
 COPY ["package.json", "package-lock.json*", "./"]
 
-RUN npm install --production
+RUN npm install 
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 7000
 
 CMD [ "node", "app.js" ]
