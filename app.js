@@ -40,9 +40,11 @@ app.use(fileUpload({useTempFiles: true}));
 const products = require("./routes/ProductsRoute");
 const user = require("./routes/UserRoute");
 const order = require("./routes/OrderRoute");
+const contact = require("./routes/ContactFormRoute");
 app.use("/api/v1", products);
 app.use("/api/v1", user);
 app.use("/api/v1", order);
+app.use("/api/v1", contact);
 
 
 app.use(express.static(path.join(__dirname,"./build")));
