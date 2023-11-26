@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.60cb20f6.css",
-    "main.js": "/static/js/main.1dfe0bca.js",
+    "main.css": "/static/css/main.ef0f1c8e.css",
+    "main.js": "/static/js/main.e61ba2d5.js",
     "static/media/fertilizer.jpg": "/static/media/fertilizer.6d863bba469117611553.jpg",
     "static/media/bg3.jpg": "/static/media/bg3.4c30d64dc4a069bab344.jpg",
     "static/media/bg2.jpg": "/static/media/bg2.f7af1e3f147e9f60469c.jpg",
@@ -10,12 +10,10 @@
     "static/media/crop.jpg": "/static/media/crop.28eb428cc37d5d3f1785.jpg",
     "static/media/disease.jpg": "/static/media/disease.5021d769351dcd40c333.jpg",
     "static/media/Cultimax.jpg": "/static/media/Cultimax.115592c4a8abea4a25bd.jpg",
-    "index.html": "/index.html",
-    "main.60cb20f6.css.map": "/static/css/main.60cb20f6.css.map",
-    "main.1dfe0bca.js.map": "/static/js/main.1dfe0bca.js.map"
+    "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.60cb20f6.css",
-    "static/js/main.1dfe0bca.js"
+    "static/css/main.ef0f1c8e.css",
+    "static/js/main.e61ba2d5.js"
   ]
 }
